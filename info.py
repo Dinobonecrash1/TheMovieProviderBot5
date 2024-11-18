@@ -49,6 +49,9 @@ reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001586987735') # request chan
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False)) # True if you want no results messages in Log Channel
+REQ_LOG_CHANNEL = int(environ.get('REQ_LOG_CHANNEL','-1002151101454'))
+MOVIE_GROUP_USERNAME = environ.get('MOVIE_GROUP_USERNAME', "kdrabbd") #[ without @ ]
+ADMIN_USRNM = environ.get('ADMIN_USRNM','Zenitsu_AF') # WITHOUT @
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Zenitsuaf:Zenitsuaf@cluster0.i58aapw.mongodb.net/?retryWrites=true&w=majority")
