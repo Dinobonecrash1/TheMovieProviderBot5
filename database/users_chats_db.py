@@ -80,7 +80,10 @@ class Database:
         return user.get('ban_status', default)
 
     async def get_all_users(self):
-        return self.col.find({})
+        users = []
+        async for user in self.col.find({}):
+            users.append(user)
+        return users
     
 
     async def delete_user(self, user_id):
