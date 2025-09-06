@@ -16,7 +16,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '24104568'))
 API_HASH = environ.get('API_HASH', '96d4cada419846dc011b019f412c23de')
-BOT_TOKEN = environ.get('BOT_TOKEN', "6874671551:AAE48sJhB8sHvEbxW-OdYD0CFbaGDkBZG84")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7012541014:AAEAtHEgwe52ESOS5JuByw6ArYpr1LQVEcQ")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -36,7 +36,7 @@ STREAMHTO = (environ.get('STREAMHTO', 'https://t.me/Entertainment_AG'))
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5817124748').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002049177517').split()] #Channel id for auto indexing ( make sure bot is admin )
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002948751167').split()] #Channel id for auto indexing ( make sure bot is admin )
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5817124748').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
@@ -44,13 +44,13 @@ auth_channel = environ.get('AUTH_CHANNEL', '') #Channel / Group Id for force sub
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001742676439') # support group id ( make sure bot is admin )
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001586987735') # request channel id ( make sure bot is admin )
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002590200858') # support group id ( make sure bot is admin )
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002590200858') # request channel id ( make sure bot is admin )
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False)) # True if you want no results messages in Log Channel
-REQ_LOG_CHANNEL = int(environ.get('REQ_LOG_CHANNEL','-1002151101454'))
-MOVIE_GROUP_USERNAME = environ.get('MOVIE_GROUP_USERNAME', "kdrabbd") #[ without @ ]
+REQ_LOG_CHANNEL = int(environ.get('REQ_LOG_CHANNEL','-1002590200858'))
+MOVIE_GROUP_USERNAME = environ.get('MOVIE_GROUP_USERNAME', "vjkkfcjjnmg") #[ without @ ]
 ADMIN_USRNM = environ.get('ADMIN_USRNM','Zenitsu_AF') # WITHOUT @
 
 # MongoDB information
@@ -76,7 +76,7 @@ TUTORIAL = environ.get('TUTORIAL', 'https://t.me/') # Tutorial video link for op
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : ʙᴇᴀᴜᴛʏᴏꜰᴛʜᴇᴍᴏᴠɪᴇꜱx')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001586987735')) #Log channel id ( make sure bot is admin )
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/kdrabbd') #Support group link ( make sure bot is admin )
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/vjkkfcjjnmg') #Support group link ( make sure bot is admin )
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
@@ -110,8 +110,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://moviebotx-ee96f200188f.herokuapp.com/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://moviebotx-ee96f200188f.herokuapp.com/".format(FQDN, PORT)
+URL = "https://{65.108.9.125:7016}/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://{65.108.9.125:7016}/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -126,9 +126,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',True))
 if HAS_SSL:
-    URL = "https://moviebotx-ee96f200188f.herokuapp.com/".format(FQDN)
+    URL = "https://{65.108.9.125:7016}/".format(FQDN)
 else:
-    URL = "https://moviebotx-ee96f200188f.herokuapp.com/".format(FQDN)  # Same as above
+    URL = "https://{65.108.9.125:7016}/".format(FQDN)  # Same as above
 # Further configuration...
 
 # add premium logs channel id
@@ -143,3 +143,4 @@ LOG_STR += ("Long IMDB storyline enabled." if LONG_IMDB_DESCRIPTION else "LONG_I
 LOG_STR += ("Spell Check Mode Is Enabled, bot will be suggesting related movies if movie not found\n" if SPELL_CHECK_REPLY else "SPELL_CHECK_REPLY Mode disabled\n")
 LOG_STR += (f"MAX_LIST_ELM Found, long list will be shortened to first {MAX_LIST_ELM} elements\n" if MAX_LIST_ELM else "Full List of casts and crew will be shown in imdb template, restrict them by adding a value to MAX_LIST_ELM\n")
 LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
+
